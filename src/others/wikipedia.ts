@@ -5,7 +5,7 @@ import { Wikipedia, WikipediaArgsSchema, WikipediaSchema } from './types.js'
 
 export default async function wikipedia (
   query: string,
-  lang: 'en' | 'id' = 'id'
+  lang: 'en' | 'de' = 'de'
 ): Promise<Wikipedia> {
   WikipediaArgsSchema.parse(arguments)
 
@@ -69,7 +69,7 @@ export default async function wikipedia (
 }
 
 function isSupportLang (lang: string): boolean {
-  return ['en', 'id'].includes(lang)
+  return ['en', 'de'].includes(lang)
 }
 
 async function getHtml (lang: string, query: string): Promise<string> {
